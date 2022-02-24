@@ -1,4 +1,42 @@
-import Todos from "./todos.js";
+// import Todos from "./todos.js";
+class Todos {
+    constructor() {
+        this.todos = [];
+    }
+
+    getAll(){
+        return this.todos;
+    }
+
+    getCount(){
+        return this.todos.length;
+    }
+
+    add(title, category){
+        this.todos.push({
+            title,
+            category
+        });
+    }
+
+    getWork(){
+        return this.todos.filter(todo => todo.category === 'work');
+    }
+
+    getWorkCount(){
+        return this.todos.filter(todo => todo.category === 'work').length;
+    }
+
+    getPersonal(){
+       return this.todos.filter(todo => todo.category === 'personal');
+    }
+
+    getPersonalCount(){
+        return this.todos.filter(todo => todo.category === 'personal').length;
+    }
+
+}
+
 
 const form = document.querySelector("#todo-form");
 const title = document.querySelector("#todo-title");
@@ -10,7 +48,7 @@ const count = document.querySelector("#todo-count");
 const render = (items, itemsCount) => {
     count.textContent = `(${itemsCount})`;
     list.innerHTML = items.map(todo => `<li>${todo.title} [${todo.category}]</li>`).join("");
-}
+};
 
 const todos = new Todos();
 
