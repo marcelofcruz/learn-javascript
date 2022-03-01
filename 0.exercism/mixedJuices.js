@@ -29,7 +29,7 @@ const limesToCut = (wedgesNeeded, limes) => {
     let totalWedges = 0
     if(wedgesNeeded !== 0 && limes.length !== 0){
         while (totalWedges <= wedgesNeeded){
-            if (lime === limes.length && totalWedges<wedgesNeeded){
+            if (lime === limes.length && totalWedges < wedgesNeeded){
                 return lime;
             }
             switch (limes[lime]) {
@@ -54,14 +54,6 @@ const limesToCut = (wedgesNeeded, limes) => {
         return lime
     }
 }
-
-const orders = [
-    'Tropical Island',
-    'Energizer',
-    'Limetime',
-    'All or Nothing',
-    'Pure Strawberry Joy'
-]
 
 const remainingOrders = (timeLeft, orders) => {
     let count = 0
